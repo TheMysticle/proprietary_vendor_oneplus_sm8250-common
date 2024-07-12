@@ -2492,7 +2492,10 @@ PRODUCT_COPY_FILES += \
 		vendor/oneplus/sm8250-common/proprietary/vendor/lib64/libsymphony-cpu.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsymphony-cpu.so \
     vendor/oneplus/sm8250-common/proprietary/vendor/lib64/libsymphonypower.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsymphonypower.so \
     vendor/oneplus/sm8250-common/proprietary/vendor/lib64/libtriplecam_image_optical_zoom.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libtriplecam_image_optical_zoom.so \
-    vendor/oneplus/sm8250-common/proprietary/vendor/lib64/libvideooptfeature.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libvideooptfeature.so \
+		vendor/oneplus/sm8250-common/proprietary/vendor/lib64/libvideooptfeature.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libvideooptfeature.so \
+		vendor/oneplus/sm8250-common/proprietary/vendor/etc/camera/dbl_small_481.model:$(TARGET_COPY_OUT_VENDOR)/etc/camera/dbl_small_481.model \
+		vendor/oneplus/sm8250-common/proprietary/vendor/etc/camera/doubleloss_large.model:$(TARGET_COPY_OUT_VENDOR)/etc/camera/doubleloss_large.model \
+		vendor/oneplus/sm8250-common/proprietary/vendor/etc/camera/license_release.lic:$(TARGET_COPY_OUT_VENDOR)/etc/camera/license_release.lic \
     vendor/oneplus/sm8250-common/proprietary/vendor/lib64/libyuv2.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libyuv2.so
 
 PRODUCT_PACKAGES += \
