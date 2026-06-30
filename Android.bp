@@ -24068,3 +24068,57 @@ cc_prebuilt_library_shared {
     prefer: true,
     soc_specific: true,
 }
+
+cc_prebuilt_library_shared {
+    name: "libSNPE",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/libSNPE.so"],
+            shared_libs: ["libc++_shared", "liblog", "libz", "libc", "libm", "libdl"],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: true,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libOPPO_Front_SCPortrait",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/libOPPO_Front_SCPortrait.so"],
+            shared_libs: ["libSNPE", "libc++_shared", "liblog", "libz", "libc", "libm", "libdl"],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: true,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libOPPO_SCPortrait",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/libOPPO_SCPortrait.so"],
+            shared_libs: ["libSNPE", "libc++_shared", "liblog", "libz", "libc", "libm", "libdl"],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: true,
+    prefer: true,
+    soc_specific: true,
+}

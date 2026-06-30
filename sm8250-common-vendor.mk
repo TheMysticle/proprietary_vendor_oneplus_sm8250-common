@@ -2161,6 +2161,9 @@ PRODUCT_PACKAGES += \
     vendor_lib_rfsa_adsp_libsns_low_lat_stream_skel_so \
     vendor_lib_rfsa_adsp_libvdsuperphoto_skel_so \
     libVDSuperPhotoAPI \
+    libSNPE \
+    libOPPO_Front_SCPortrait \
+    libOPPO_SCPortrait \
     vendor.qti.diaghal@1.0 \
     com.qualcomm.qti.dpm.api@1.0 \
     lib-imsvideocodec \
