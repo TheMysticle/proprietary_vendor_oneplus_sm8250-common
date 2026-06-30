@@ -145,10 +145,11 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: ["proprietary/system/lib64/libdynamic_depth.so"],
+            shared_libs: ["libbase", "libc++", "libc", "libdl", "libimage_io", "libm", "libxml2"]
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
+    check_elf_files: true,
     prefer: true,
 }
 
@@ -1001,6 +1002,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: ["proprietary/vendor/lib64/libalCFRLV_dsp.so"],
+            shared_libs: ["libOpenCL", "libc++_shared", "liblog", "libc", "libm", "libdl"]
         },
     },
     compile_multilib: "64",
@@ -1018,10 +1020,11 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: ["proprietary/vendor/lib64/libAlgoProcess.so"],
+            shared_libs: ["libEGL", "libGLESv3", "libPolarrRender", "libapsexif", "libapsjpeg", "libc++", "libc", "libcutils", "libdl", "libhidlbase", "libhidltransport", "libion", "liblog", "libm", "libmpbase", "libnativewindow", "libutils", "vendor.qti.hardware.camera.postproc@1.0"]
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
+    check_elf_files: true,
     prefer: true,
     soc_specific: true,
 }
@@ -1473,10 +1476,11 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: ["proprietary/vendor/lib64/libapsexif.so"],
+            shared_libs: ["libc++", "libc", "libm", "libdl"]
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
+    check_elf_files: true,
     prefer: true,
     soc_specific: true,
 }
@@ -1490,10 +1494,11 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: ["proprietary/vendor/lib64/libapsjpeg.so"],
+            shared_libs: ["libc++", "libc", "libm", "libdl"]
         },
     },
     compile_multilib: "64",
-    check_elf_files: false,
+    check_elf_files: true,
     prefer: true,
     soc_specific: true,
 }
@@ -1507,6 +1512,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: ["proprietary/system_ext/lib64/libcsextimpl.so"],
+            shared_libs: ["android.frameworks.cameraservice.common@2.0", "android.frameworks.cameraservice.device@2.0", "android.frameworks.cameraservice.service@2.2", "android.frameworks.sensorservice@1.0", "android.hardware.camera.common@1.0", "android.hardware.camera.device@3.6", "android.hardware.camera.provider@2.7", "android.hardware.sensors@1.0", "android.hardware.thermal@1.0", "libbase", "libbinder", "libbinder_ndk", "libc++", "libc", "libcamera_client", "libcamera_metadata", "libcameraservice", "libcutils", "libdl", "libdynamic_depth", "libexif", "libfmq", "libgui", "libhardware", "libhidlbase", "libimage_io", "libjpeg", "liblog", "libm", "libmedia", "libmedia_codeclist", "libmedia_omx", "libmediautils", "libmemunreachable", "libnativewindow", "libsensorprivacy", "libstagefright", "libstagefright_foundation", "libui", "libutils", "libutilscallstack", "libvndksupport", "libxml2", "libyuv", "vendor.oplus.hardware.cameraMDM@1.0", "vendor.oplus.hardware.cameraextension-V1-ndk", "vendor.oplus.hardware.cameraextension@1.0", "vendor.oplus.hardware.performance-V1-ndk", "vendor.oplus.hardware.sendextcamcmd-V1-ndk"]
         },
     },
     compile_multilib: "64",
@@ -4314,7 +4320,8 @@ cc_prebuilt_library_shared {
             ],
         },
     },
-    compile_multilib: "32",
+    compile_multilib: "both",
+    check_elf_files: true,
     prefer: true,
     soc_specific: true,
 }
@@ -18873,6 +18880,33 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libhta_hexagon_runtime_odm",
+    stem: "libhta_hexagon_runtime",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/hta_lib/libhta_hexagon_runtime.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcdsprpc",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hta_lib",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "com.qti.stats.pdlib_odm",
     stem: "com.qti.stats.pdlib",
     owner: "oneplus",
@@ -23827,3 +23861,210 @@ install_symlink {
     symlink_target: "/vendor/lib64/egl/libq3dtools_adreno.so",
 }
 
+
+cc_prebuilt_library_shared {
+    name: "vendor.oplus.hardware.cameraextension@1.0",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/system/lib64/vendor.oplus.hardware.cameraextension@1.0.so"],
+            shared_libs: ["libhidlbase", "liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl"]
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.oplus.hardware.cameraMDM@1.0",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/system_ext/lib64/vendor.oplus.hardware.cameraMDM@1.0.so"],
+            shared_libs: ["libhidlbase", "liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl"]
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: true,
+    system_ext_specific: true,
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libapsdarksight",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/libapsdarksight.so"],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libVDSuperPhotoAPI",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/libVDSuperPhotoAPI.so"],
+            shared_libs: [
+                "liblog",
+                "libcdsprpc",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libSuperSensor",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/libSuperSensor.so"],
+            shared_libs: [
+                "liblog",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libSuperSensorFallback",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/libSuperSensorFallback.so"],
+            shared_libs: [
+                "liblog",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libSuperSensorProcessor",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/libSuperSensorProcessor.so"],
+            shared_libs: [
+                "libSuperSensor",
+                "libSuperSensorFallback",
+                "liblog",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libSuperSensorProcessorCWrapper",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/libSuperSensorProcessorCWrapper.so"],
+            shared_libs: [
+                "libSuperSensor",
+                "libSuperSensorFallback",
+                "libSuperSensorProcessor",
+                "liblog",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libVDBlurless",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/libVDBlurless.so"],
+            shared_libs: ["liblog", "libc", "libm", "libdl"],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: true,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libmorpho_image_refiner_deflicker",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/libmorpho_image_refiner_deflicker.so"],
+            shared_libs: ["libEGL", "libGLESv3", "libc", "libm", "libdl"],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: true,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "lib_oneplus_vivideffect",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/lib_oneplus_vivideffect.so"],
+            shared_libs: ["liblog", "libc", "libm", "libdl"],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: true,
+    prefer: true,
+    soc_specific: true,
+}

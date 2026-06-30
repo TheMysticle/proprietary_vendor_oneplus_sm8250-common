@@ -2160,6 +2160,7 @@ PRODUCT_PACKAGES += \
     vendor_lib_rfsa_adsp_libsns_device_mode_skel_so \
     vendor_lib_rfsa_adsp_libsns_low_lat_stream_skel_so \
     vendor_lib_rfsa_adsp_libvdsuperphoto_skel_so \
+    libVDSuperPhotoAPI \
     vendor.qti.diaghal@1.0 \
     com.qualcomm.qti.dpm.api@1.0 \
     lib-imsvideocodec \
@@ -2204,6 +2205,7 @@ PRODUCT_PACKAGES += \
     libfastov_dsp \
     vendor.oplus.hardware.orms@1.0 \
     android.hardware.secure_element@1.0-impl \
+    libhta_hexagon_runtime_odm \
     com.qti.stats.pdlib_odm \
     libipebpsstriping_odm \
     fingerprint.19805_goodix9638_G6_3.default \
@@ -2216,6 +2218,16 @@ PRODUCT_PACKAGES += \
     vendor.qti.esepowermanager@1.1-impl \
     libalCFRLV_dsp \
     libAlgoProcess \
+    libapsdarksight \
+    libVDBlurless \
+    libSuperSensor \
+    libSuperSensorProcessor \
+    libSuperSensorFallback \
+    libSuperSensorProcessorCWrapper \
+    libmorpho_image_refiner_deflicker \
+    lib_oneplus_vivideffect \
+    vendor.oplus.hardware.cameraextension@1.0 \
+    vendor.oplus.hardware.cameraMDM@1.0 \
     lib-virtual-modem-protos \
     libSonyIMX471RmscLibrary \
     libapsexif \
