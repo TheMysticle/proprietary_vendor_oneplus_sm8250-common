@@ -1512,7 +1512,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: ["proprietary/system_ext/lib64/libcsextimpl.so"],
-            shared_libs: ["android.frameworks.cameraservice.common@2.0", "android.frameworks.cameraservice.device@2.0", "android.frameworks.cameraservice.service@2.2", "android.frameworks.sensorservice@1.0", "android.hardware.camera.common@1.0", "android.hardware.camera.device@3.6", "android.hardware.camera.provider@2.7", "android.hardware.sensors@1.0", "android.hardware.thermal@1.0", "libbase", "libbinder", "libbinder_ndk", "libc++", "libc", "libcamera_client", "libcamera_metadata", "libcameraservice", "libcutils", "libdl", "libdynamic_depth", "libexif", "libfmq", "libgui", "libhardware", "libhidlbase", "libimage_io", "libjpeg", "liblog", "libm", "libmedia", "libmedia_codeclist", "libmedia_omx", "libmediautils", "libmemunreachable", "libnativewindow", "libsensorprivacy", "libstagefright", "libstagefright_foundation", "libui", "libutils", "libutilscallstack", "libvndksupport", "libxml2", "libyuv", "vendor.oplus.hardware.cameraMDM@1.0", "vendor.oplus.hardware.cameraextension-V1-ndk", "vendor.oplus.hardware.cameraextension@1.0", "vendor.oplus.hardware.performance-V1-ndk", "vendor.oplus.hardware.sendextcamcmd-V1-ndk"]
+            shared_libs: ["android.frameworks.cameraservice.common@2.0", "android.frameworks.cameraservice.device@2.0", "android.frameworks.cameraservice.service@2.2", "android.frameworks.sensorservice@1.0", "android.hardware.camera.common@1.0", "android.hardware.camera.device@3.6", "android.hardware.camera.provider@2.7", "android.hardware.sensors@1.0", "android.hardware.thermal@1.0", "libbase", "libbinder", "libbinder_ndk", "libc++", "libc", "libcamera_client", "libcamera_metadata", "libcameraservice", "libcutils", "libdl", "libdynamic_depth", "libexif", "libfmq", "libgui", "libhardware", "libhidlbase", "libimage_io", "libjpeg", "liblog", "libm", "libmedia", "libmedia_codeclist", "libmedia_omx", "libmediautils", "libmemunreachable", "libnativewindow", "libsensorprivacy", "libstagefright", "libstagefright_foundation", "libui", "libutils", "libutilscallstack", "libvndksupport", "libcsextimpl_shim", "libxml2", "libyuv", "vendor.oplus.hardware.cameraMDM@1.0", "vendor.oplus.hardware.cameraextension-V1-ndk", "vendor.oplus.hardware.cameraextension@1.0", "vendor.oplus.hardware.performance-V1-ndk", "vendor.oplus.hardware.sendextcamcmd-V1-ndk"]
         },
     },
     compile_multilib: "64",
@@ -24150,7 +24150,23 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: ["proprietary/vendor/lib64/libaps_frame_registration.so"],
-            shared_libs: ["liblog", "libdl", "libstdc++", "libcdsprpc", "libc++_shared", "libm", "libc"],
+            shared_libs: ["liblog", "libdl", "libstdc++_vendor", "libcdsprpc", "libc++_shared", "libm", "libc"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libstdc++_vendor",
+        owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/libstdc++_vendor.so"],
         },
     },
     compile_multilib: "64",
