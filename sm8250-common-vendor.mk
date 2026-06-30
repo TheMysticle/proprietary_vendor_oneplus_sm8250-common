@@ -2214,8 +2214,14 @@ PRODUCT_PACKAGES += \
     fingerprint.goodix9608_G5.default \
     fingerprint.goodix9638_G6.default \
     vendor.qti.esepowermanager@1.1-impl \
+    libalCFRLV_dsp \
+    libAlgoProcess \
     lib-virtual-modem-protos \
     libSonyIMX471RmscLibrary \
+    libapsexif \
+    libc++_shared \
+    libapsjpeg \
+    libcsextimpl \
     libcommcenterfw \
     libcommcenterutils \
     libdapparamstorage_v3_6 \
@@ -2223,6 +2229,7 @@ PRODUCT_PACKAGES += \
     libdlbdsservice_v3_6 \
     libdmtp-protos-lite \
     libdmtpclient \
+    libdynamic_depth \
     libgf_hal_19805_G6_3_oplus \
     libgf_hal_19805_G6_7_oplus \
     libgf_hal_19811_G6_oplus \
@@ -2412,3 +2419,4 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
+
