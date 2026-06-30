@@ -24078,7 +24078,7 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: ["proprietary/vendor/lib64/libSNPE.so"],
-            shared_libs: ["libc++_shared", "liblog", "libz", "libc", "libm", "libdl"],
+            shared_libs: ["libc++_shared", "liblog", "libz", "libc", "libm", "libdl", "libsymphony-cpu"],
         },
     },
     compile_multilib: "64",
@@ -24119,6 +24119,41 @@ cc_prebuilt_library_shared {
     },
     compile_multilib: "64",
     check_elf_files: true,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libsymphony-cpu",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/libsymphony-cpu.so"],
+            shared_libs: ["libc++_shared", "liblog", "libc", "libm", "libdl"],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: true,
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libaps_frame_registration",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/libaps_frame_registration.so"],
+            shared_libs: ["liblog", "libdl", "libstdc++", "libcdsprpc", "libc++_shared", "libm", "libc"],
+        },
+    },
+    compile_multilib: "64",
     prefer: true,
     soc_specific: true,
 }

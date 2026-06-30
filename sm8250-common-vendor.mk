@@ -2164,6 +2164,8 @@ PRODUCT_PACKAGES += \
     libSNPE \
     libOPPO_Front_SCPortrait \
     libOPPO_SCPortrait \
+    libsymphony-cpu \
+    libaps_frame_registration \
     vendor.qti.diaghal@1.0 \
     com.qualcomm.qti.dpm.api@1.0 \
     lib-imsvideocodec \
